@@ -1,1 +1,87 @@
-<p>flight works!</p>
+<section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-8 col-xl-8">
+                <div class="card bg-lightsalmon text-white" style="border-radius: 1rem;">
+                    <div class="card-body p-5 text-center">
+                        <form [formGroup]="formJourney" (ngSubmit)="routeCalculate()">
+                            <div class="mb-md-5 mt-md-3 pb-5">
+
+                                <h2 class="fw-bold mb-2 text-secondary ">Journeys Disponibility</h2>
+
+                                <div class = "row m-auto"> 
+
+                                <div class="col-lg-4 col-md-12 p-2 text-center">
+                                     
+                                    <select style="text-transform:uppercase" maxlength="3" formControlName="origin"
+                                        type="text" id="typeEmailX" class="form-control form-control-lg" required>
+
+                                        <option value="">Origin</option>
+                                        <option value="MZL">Manizales</option>
+                                        <option value="BOG">Bogota</option>
+                                        <option value="MDE">Medellin</option>
+                                        <option value="CTG">Cartagena</option>
+                                        <option value="PEI">Pereira</option>
+                                      
+                                    </select>
+                      
+                                    <div class="msjValidation"
+                                        *ngIf="(getForm['origin'].errors && (getForm['origin'].dirty || getForm['origin'].touched))">
+                                        
+                                    </div>
+                                    
+                                </div>
+
+                                <div class="col-lg-4 col-md-12 p-2 text-center">
+                                    
+                                    <select style="text-transform:uppercase" maxlength="3" formControlName="destination"
+                                        type="text" id="typeEmailX" class="form-control form-control-lg">
+
+                                        <option value="">DESTINATION</option>
+                                        <option value="MZL">Manizales</option>
+                                        <option value="BOG">Bogota</option>
+                                        <option value="MDE">Medellin</option>
+                                        <option value="CTG">Cartagena</option>
+                                        <option value="PEI">Pereira</option>
+                                      
+                                    </select>
+                                    
+                                    <div class="msjValidation"
+                                        *ngIf="(getForm['destination'].errors && (getForm['destination'].dirty || getForm['destination'].touched))">
+                                        
+                                    </div>
+                                </div> 
+                                <div class="col-lg-3 col-md-12 p-2 text-center">
+
+                                    <select formControlName="money" class="form-control form-control-lg" name="selectAction"
+                                        [(ngModel)]="selected.id" (change)="updateMoney($event);">
+                                        <option *ngFor="let op of money" [ngValue]="op['id']">
+                                            {{op.description}}
+                                        </option>
+                                    
+                                    </select>
+
+                                    <label class="form-label" for="typeEmailX">Price</label>
+                                    
+                                    <div class="msjValidation" *ngIf="price>0">
+                                        <strong>Price: {{price* selected.value}} {{selected.description}}</strong>
+                                    </div>
+                                </div>
+
+                                <button
+                                    [disabled]="getForm['maxFlights'].errors || getForm['origin'].errors || getForm['destination'].errors || getForm['origin'].value==getForm['destination'].value"
+                                    class="btn btn-info btn-lg px-5" type="submit">Search</button>
+                            </div>
+                                    
+                        </div>
+
+
+                                
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
