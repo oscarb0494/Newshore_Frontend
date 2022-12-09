@@ -1,12 +1,12 @@
 //Class make for model the money change
 
 export class PriceModel {
-    constructor(id: number, description: string, value: number){
+    constructor(id: number,base: string, value: number){
         this.id = id;
-        this.description = description;
+        this.base = base;
         this.value = value;
     }
     id: number = 0;
-    description: string ="";
+    base: string ="";
     value: number =0;
 }
