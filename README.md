@@ -3,7 +3,7 @@
 ## General Info
 ***
 
-(https://ibb.co/G9P2tP6)
+![](https://ibb.co/G9P2tP6)
 
 Este es el Frontend del proyecto prueba presentando para la empresa NewShore. Se basa en un buscador de vuelos en el cual se toma el origen y el destino y en base de estos consumir: 1. API propia 2.. API empresarial y recibir información, con la finalidad de obtener los vuelos disponibles, el precio y las rutas.
 
