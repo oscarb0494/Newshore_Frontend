@@ -3,11 +3,15 @@
 ## General Info
 ***
 
+(https://ibb.co/G9P2tP6)
+
 Este es el Frontend del proyecto prueba presentando para la empresa NewShore. Se basa en un buscador de vuelos en el cual se toma el origen y el destino y en base de estos consumir: 1. API propia 2.. API empresarial y recibir información, con la finalidad de obtener los vuelos disponibles, el precio y las rutas.
 
 El frontend se encarga de recepcionar los datos para luego ser consumidos por la API y reflejar visualmente los datos.
 
 El proyecto se genero con [Angular CLI](https://github.com/angular/angular-cli) version 15.0.1..
+
+El proyecto actualmente, consume la api, obtiene origen y destino, y permite seleccionar el tipo de moneda. Busca y encuentra los vuelos directos (nivel0) y muestra su costo.
 
 ## Requisitos Frontend: 
 ***
